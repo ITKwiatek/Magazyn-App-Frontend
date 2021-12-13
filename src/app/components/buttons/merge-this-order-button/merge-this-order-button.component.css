@@ -1,0 +1,22 @@
+.merge-this-order-button {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    height:80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.merge-this-order-button:hover {
+    /* font-size: 40px; */
+    cursor: pointer;
+    background-color: #1b5e20 !important;
+}
+
+.merge-this-order-button i {
+    font-size: 70px !important;
+    text-align: center;
+    /* padding: auto !important; */
+}

@@ -1,0 +1,16 @@
+.card{
+    width: 20rem;
+    margin: 1rem;
+}
+
+.cardRelativeButton {
+    position: absolute;
+    top: -0.5rem;
+    left: -0.5rem;
+}
+
+.cardRelativeAddButton {
+    position: absolute;
+    top: -0.8rem;
+    right: -0.8rem;  
+}

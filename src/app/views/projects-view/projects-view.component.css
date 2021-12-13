@@ -1,0 +1,17 @@
+.projectCards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.projectTitleContainer {
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+}
+
+.floatingButtonContainer {
+    display: flex;
+    align-items: flex-end;
+}

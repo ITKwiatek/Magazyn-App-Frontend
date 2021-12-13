@@ -1,0 +1,11 @@
+.editOrderButton {
+    /* padding: 0 !important; */
+    position: absolute;
+    top: 74px;
+    right: 60px;
+}
+
+.editOrderButton:hover {
+    /* font-size: 40px; */
+    cursor: pointer;
+}

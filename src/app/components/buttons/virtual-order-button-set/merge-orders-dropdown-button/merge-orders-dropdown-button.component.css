@@ -1,0 +1,16 @@
+
+.mergeOrdersButton {
+    /* padding: 0 !important; */
+    position: absolute;
+    top: 74px;
+    right: 10px;
+}
+
+.mergeOrdersButton:hover {
+    /* font-size: 40px; */
+    cursor: pointer;
+}
+
+#mergeOrdersButtonDropdown {
+    width: 10rem !important;
+}

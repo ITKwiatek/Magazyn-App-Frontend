@@ -27,9 +27,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/materialize-css/dist/css/materialize.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/materialize-css/dist/js/materialize.js",
+              "src/app/layout/nav/nav.js",
+              "src/app/service/merge-orders-button.js",
+              "src/app/service/toast-service.js",
+              "src/app/components/search-order-input/search-order-input.js"
+            ]
           },
           "configurations": {
             "production": {

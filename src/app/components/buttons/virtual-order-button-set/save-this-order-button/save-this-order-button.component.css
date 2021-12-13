@@ -1,0 +1,11 @@
+.saveOrderButton {
+    /* padding: 0 !important; */
+    position: absolute;
+    top: 74px;
+    right: 110px;
+}
+
+.saveOrderButton:hover {
+    /* font-size: 40px; */
+    cursor: pointer;
+}

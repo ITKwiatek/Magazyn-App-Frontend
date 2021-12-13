@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+main {
+    margin: 2rem;
+}
+
+/* Pagination */
+.mat-paginator-container {
+    width: fit-content !important;
+  }
+
+.mat-paginator-outer-container {
+    display: flex;
+    justify-content: center !important;
+}
+
+#pagination {
+    font-size: x-large;
+}
+
+/* Flex classes */
+.flexCenter {
+    display: flex;
+    justify-content: center;
+}
+
+/* Margin, Padding */
+
+.noMargin {
+    margin: 0;
+}
+
+.noPadding {
+    padding: 0;
+}
+
+/* Materialize Toast */
+#toast-container {
+    top: auto !important;
+    right: auto !important;
+    bottom: 10%;
+    left:7%;  
+  }

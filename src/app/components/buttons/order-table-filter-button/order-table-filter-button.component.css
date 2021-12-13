@@ -1,0 +1,13 @@
+.connectButton {
+    position: absolute;
+    top: 74px;
+    right: 10px;
+}
+
+.connectButton:hover {
+    cursor: pointer;
+}
+
+#dropdown1 {
+    width: 20rem !important;
+}

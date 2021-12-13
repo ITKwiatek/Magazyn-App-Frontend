@@ -1,0 +1,25 @@
+<div class="cardContainer">
+    <div class="card blue-grey darken-1 z-depth-3">
+        <app-merge-this-order-button [order]="order"></app-merge-this-order-button>
+        <a class="waves-effect waves-red btn-small cardRelativeButton">{{getCountOfFinishedElements()}}/{{getCountOfAllElements()}}</a>
+        <a class="btn-floating btn waves-effect waves-light green darken-1 cardRelativeAddButton hide"><i class="material-icons">add</i></a>
+        <div class="card-content">
+            <a class="white-text waves-effect" [href]="'/order/' + order._id">
+                <span class="card-title orderName">Zamówienie #{{ order._orderNumber }}</span>    
+                <p>Projekt: <b>{{order._projectName}}</b></p> 
+                <p>Status: <b>
+                    <span *ngIf="getState() == 'NOWY'" class="green-text text-darken-1 projectCardState">{{ getState().toString() }}</span>
+                    <span *ngIf="getState() == 'NIEDOKOŃCZONY'" class="yellow-text text-darken-3 projectCardState">{{ getState().toString() }}</span>
+                    <span *ngIf="getState() == 'ZREALIZOWANY'" class="blue-text text-darken-3 projectCardState">{{ getState().toString() }}</span>
+                </b></p>
+                <p>Przekazano: <b>{{order._dateOfTransfer | date: 'dd/MM/yyyy' }}</b></p>
+                <p>Ostatnia zmiana: <b>{{order._dateOfLastModification | date: 'dd/MM/yyyy' }}</b></p>
+
+                <p>Do Wydania: <b>
+                    <span *ngIf="isTodayOrLess(order._dateOfDeadline)" class="red-text">{{order._dateOfDeadline | date: 'dd/MM/yyyy' }}</span>
+                    <span *ngIf="!isTodayOrLess(order._dateOfDeadline)" class="white-text">{{order._dateOfDeadline | date: 'dd/MM/yyyy' }}</span>
+                </b></p>
+            </a>
+        </div>
+    </div>
+</div>

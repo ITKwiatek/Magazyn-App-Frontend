@@ -1,0 +1,44 @@
+<app-virtual-order-button-set></app-virtual-order-button-set>
+
+<app-search-order-input></app-search-order-input>
+<div class="projectContainer">
+ <div class="projectTitleContainer">
+     <span style="text-decoration: underline; text-shadow: #90a4ae 1px 0 25px;"><b>{{project._name}}</b></span>
+</div>
+ <div class="projectCards">
+    <app-project-card [order]=project._orders[0]></app-project-card>
+    <app-project-card [order]=project._orders[1]></app-project-card>
+    <app-project-card [order]=project._orders[2]></app-project-card>
+ </div>
+<div>
+  <div *ngFor="let proj of projects | paginate: { id: 'pagination',
+    itemsPerPage: 10,
+    currentPage: page,
+    totalItems: totalRecords }"><p>{{proj}}</p>
+    </div>
+</div>
+</div>
+<div style="height: 200px;"></div>
+<div class="mat-paginator-outer-container">
+  <div class="mat-paginator-container">
+      <pagination-controls
+                        id="pagination"
+                        (pageChange)="page = $event"
+                        (pageBoundsCorrection)="page = $event"
+                        [maxSize]="9"
+                        [directionLinks]="true"
+                        [autoHide]="true"
+                        [responsive]="true"
+                        previousLabel="Previous"
+                        nextLabel="Next"
+                        screenReaderPaginationLabel="Pagination"
+                        screenReaderPageLabel="page"
+                        screenReaderCurrentLabel="You're on page">
+    </pagination-controls>
+  </div>
+</div>
+
+
+
+
+

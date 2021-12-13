@@ -1,0 +1,41 @@
+<a class='dropdown-trigger btn-floating pulse btn connectButton' data-target='dropdown1'><i class="material-icons">filter_list</i></a>
+  <!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'>
+    <li class="divider" tabindex="-1"></li>
+    <li (click)="filterClicked('optionSAP')">
+      <a>
+        <i *ngIf="isNotHidden('optionSAP'); else secound" id="optionSAP" class="material-icons green-text">check</i>
+        <ng-template #secound>
+          <i id="optionSAP" class="material-icons red-text">close</i>
+        </ng-template>
+        SAP
+      </a>
+    </li>
+    <li (click)="filterClicked('optionArtNr')">
+      <a>
+        <i *ngIf="isNotHidden('optionArtNr'); else secound" id="optionArtNr" class="material-icons green-text">check</i>
+        <ng-template #secound>
+          <i id="optionArtNr" class="material-icons red-text">close</i>
+        </ng-template>
+        Numer Artykułu
+      </a>
+    </li>
+    <li (click)="filterClicked('optionProd')">
+      <a>
+        <i *ngIf="isNotHidden('optionProd'); else secound" id="optionProd" class="material-icons green-text">check</i>
+        <ng-template #secound>
+          <i id="optionProd" class="material-icons red-text">close</i>
+        </ng-template>
+        Producent
+      </a>
+    </li>
+    <li (click)="filterClicked('optionState')">
+      <a>
+        <i *ngIf="isNotHidden('optionState'); else secound" id="optionState" class="material-icons green-text">check</i>
+        <ng-template #secound>
+          <i id="optionState" class="material-icons red-text">close</i>
+        </ng-template>
+        Status
+      </a>
+    </li>
+  </ul>

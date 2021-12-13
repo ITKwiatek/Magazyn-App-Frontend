@@ -1,0 +1,7 @@
+<!-- Modal -->
+<app-virtual-order-name-modal></app-virtual-order-name-modal>
+
+<app-merge-orders-dropdown-button [hidden]="isMergeMode()"></app-merge-orders-dropdown-button>
+<app-cancel-this-order-button [hidden]="!isMergeMode()"></app-cancel-this-order-button>
+<app-edit-this-order-button [hidden]="!isMergeMode()"></app-edit-this-order-button>
+<app-save-this-order-button [hidden]="!isMergeMode()"></app-save-this-order-button>

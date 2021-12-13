@@ -1,0 +1,88 @@
+<!-- <a class='dropdown-trigger btn-floating pulse btn connectButton' data-target='dropdown1'><i class="material-icons">filter_list</i></a>
+  <!-- Dropdown Structure -->
+  <!-- <ul id='dropdown1' class='dropdown-content'>
+    <li class="divider" tabindex="-1"></li>
+    <li (click)="filterClicked('optionSAP')">
+      <a>
+        <i *ngIf="isNotHidden('optionSAP'); else secound" id="optionSAP" class="material-icons green-text">check</i>
+        <ng-template #secound>
+          <i id="optionSAP" class="material-icons red-text">close</i>
+        </ng-template>
+        SAP
+      </a>
+    </li>
+    <li (click)="filterClicked('optionArtNr')">
+      <a>
+        <i *ngIf="isNotHidden('optionArtNr'); else secound" id="optionArtNr" class="material-icons green-text">check</i>
+        <ng-template #secound>
+          <i id="optionArtNr" class="material-icons red-text">close</i>
+        </ng-template>
+        Numer Artykułu
+      </a>
+    </li>
+    <li (click)="filterClicked('optionProd')">
+      <a>
+        <i *ngIf="isNotHidden('optionProd'); else secound" id="optionProd" class="material-icons green-text">check</i>
+        <ng-template #secound>
+          <i id="optionProd" class="material-icons red-text">close</i>
+        </ng-template>
+        Producent
+      </a>
+    </li>
+    <li (click)="filterClicked('optionState')">
+      <a>
+        <i *ngIf="isNotHidden('optionState'); else secound" id="optionState" class="material-icons green-text">check</i>
+        <ng-template #secound>
+          <i id="optionState" class="material-icons red-text">close</i>
+        </ng-template>
+        Status
+      </a>
+    </li>
+  </ul> -->
+<app-order-table-filter-button></app-order-table-filter-button>
+<div class="projectTitleContainer">
+  <span style="text-decoration: underline; text-shadow: #90a4ae 1px 0 25px;"><b>{{order._projectName}}</b></span>
+</div><table class="highlight centered">
+    <thead>
+      <tr>
+          <th *ngIf="isNotHidden('optionSAP')">SAP</th>
+          <th *ngIf="isNotHidden('optionArtNr')">artNr</th>
+          <th *ngIf="isNotHidden('optionProd')">Producent</th>
+          <th>Nr Zamówienia</th>
+          <th *ngIf="isNotHidden('optionState')" class="hide-on-med-and-down">Status</th>
+          <th>Ilość</th>
+          <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let elem of elements" style="height: 70px;" [ngClass] = " {
+                                                        'green lighten-4' : elem._state == stateZrealizowany,
+                                                        'orange lighten-5': elem._state == stateNiedokonczony
+                                                      }">
+        <td *ngIf="isNotHidden('optionSAP')">{{elem._SAP}}</td>
+        <td *ngIf="isNotHidden('optionArtNr')">{{elem._artNr}}</td>
+        <td *ngIf="isNotHidden('optionProd')">{{elem._producent}}</td>
+        <td>{{elem._orderNr}}</td>
+        <td *ngIf="isNotHidden('optionState')">
+          <b *ngIf="elem._state == stateNowy; else secound" class="green-text text-darken-1">{{getState(elem._state)}}</b>
+            <ng-template #secound>
+              <b *ngIf="elem._state == stateZrealizowany; else third" class="blue-text text-darken-3">{{getState(elem._state)}}</b>
+            </ng-template>
+            <ng-template #third>
+              <b class="yellow-text text-darken-3">{{getState(elem._state)}}</b>
+            </ng-template>
+        </td>
+        <td style="width: 100px;">
+          <div class="countFlexBaseline">
+            <a class="btn-floating waves-effect waves-light"><i class="material-icons countIconRemove countIcon" style="font-size:2.7rem" (click)="countDown(elem._id)">remove</i></a>
+            <b><span [id]="'actualCount' + elem._id" style="margin-left:5px;">{{elem._actualCount}}</span><span style="margin-right: 5px;">/{{elem._count}}</span></b>
+            <a class="btn-floating waves-effect waves-light"><i class="material-icons countIconAdd countIcon" style="font-size: 2.7rem; margin: 0;" (click)="countUp(elem._id)">add</i></a>            
+          </div>
+        </td>
+        <td style="width: 10px;">
+          <i *ngIf="elem._state == stateZrealizowany;" [id]="'checkButton' + elem._id" class="material-icons green-text countIcon" style="margin: 0; padding: 0; font-size: 4rem;" (click)="checkElement(elem._id)">check</i>
+          <i *ngIf="elem._state != stateZrealizowany;" [id]="'checkButton' + elem._id" class="material-icons grey-text countIcon" style="margin: 0; padding: 0; font-size: 4rem;" (click)="checkElement(elem._id)">crop_square</i>
+        </td>
+      </tr>
+    </tbody>
+  </table>

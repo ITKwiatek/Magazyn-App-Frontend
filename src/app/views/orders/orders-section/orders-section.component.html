@@ -1,0 +1,31 @@
+<app-virtual-order-button-set></app-virtual-order-button-set>
+
+<app-search-order-input></app-search-order-input>
+<div class="ordersContainer">
+    <div *ngFor="let order of orders | paginate: { id: 'pagination',
+                                                    itemsPerPage: 4,
+                                                    currentPage: page,
+                                                    totalItems: totalRecords }">
+        <app-single-order-card [order]="order"></app-single-order-card>
+    </div>
+</div>
+
+<!-- Pagination -->
+<div class="mat-paginator-outer-container">
+    <div class="mat-paginator-container">
+        <pagination-controls
+                          id="pagination"
+                          (pageChange)="page = $event"
+                          (pageBoundsCorrection)="page = $event"
+                          [maxSize]="9"
+                          [directionLinks]="true"
+                          [autoHide]="true"
+                          [responsive]="true"
+                          previousLabel="Previous"
+                          nextLabel="Next"
+                          screenReaderPaginationLabel="Pagination"
+                          screenReaderPageLabel="page"
+                          screenReaderCurrentLabel="You're on page">
+        </pagination-controls>
+    </div>
+</div>

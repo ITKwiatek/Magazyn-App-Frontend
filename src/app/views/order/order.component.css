@@ -1,0 +1,54 @@
+
+.flexRow{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input {
+    text-align: center;
+}
+
+.countFlexBaseline {
+    display: flex;
+    align-items: center;
+}
+
+.countIconAdd {
+    margin: 0;
+    margin-left: 5px;
+}
+
+.countIconRemove {
+    margin: 0;
+    margin-right: 5px;
+}
+
+
+.projectTitleContainer {
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.countIcon:hover {
+    cursor: pointer;
+}
+
+td ,th{
+    padding-top: 0;
+    padding-bottom: 0;
+}

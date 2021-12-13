@@ -1,0 +1,14 @@
+  <!-- Modal Structure -->
+  <div id="virtualOrderNameModal" class="modal">
+    <div class="modal-content">
+      <h4>Nazwij swoje wirtualne zamówienie</h4>
+      <div class="input-field col s6" style="margin-top: 40px;">
+        <i class="material-icons prefix">mode_edit</i>
+        <input id="virtualOrderNameInput" #virtualOrderNameInput class="materialize-textarea" type="text" class="validate">
+        <label for="virtualOrderNameInput">Nazwa wirtualnego zamówienia</label>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-close waves-effect waves-green btn-flat" (click)="saveName(virtualOrderNameInput.value)" (click)="changeMergeMode()" onclick="M.toast({html: 'Dodano nazwę'})">Akceptuj</a>
+    </div>
+  </div>
