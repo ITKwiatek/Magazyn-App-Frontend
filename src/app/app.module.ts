@@ -11,7 +11,6 @@ import { DatePipe } from '@angular/common';
 import { OrderComponent } from './views/order/order.component';
 import { OrderFilterService } from './service/order-filter.service';
 import { SharedService } from './service/shared.service';
-import { NgxPaginationModule } from 'ngx-pagination';
 import { SingleOrderCardComponent } from './views/orders/single-order-card/single-order-card.component';
 import { MergeOrdersButtonComponent } from './components/buttons/virtual-order-button-set/merge-orders-dropdown-button/merge-orders-dropdown-button.component';
 import { OrderTableFilterButtonComponent } from './components/buttons/order-table-filter-button/order-table-filter-button.component';
@@ -30,6 +29,7 @@ import { NewOrdersViewComponent } from './views/orders/new-orders-view/new-order
 import { AllOrdersViewComponent } from './views/orders/all-orders-view/all-orders-view.component';
 import { OrdersSectionComponent } from './views/orders/orders-section/orders-section.component';
 import { VirtualOrdersViewComponent } from './views/virtual-orders-view/virtual-orders-view.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -60,7 +60,7 @@ import { VirtualOrdersViewComponent } from './views/virtual-orders-view/virtual-
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule  
   ],
   providers: [
     DatePipe,

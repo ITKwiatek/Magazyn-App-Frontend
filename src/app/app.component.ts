@@ -1,5 +1,4 @@
 import { Component, NgModule} from '@angular/core';
-import { LayoutComponent } from './layout/layout.component';
 
 declare function toastOnReload():void;
 
@@ -14,6 +13,6 @@ export class AppComponent {
   constructor(){
     toastOnReload();
   }
-  
+
   title = 'Zarządzaj magazynem';
 }
